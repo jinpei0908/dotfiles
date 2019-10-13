@@ -22,6 +22,7 @@ set hlsearch
 " Set autocmd
 autocmd BufEnter [Mm]akefile set noexpandtab
 autocmd BufEnter *.ya\\\{0,1\}ml set shiftwidth=2
+autocmd BufEnter *.json set shiftwidth=2
 autocmd BufNewFile *.bash call EnterSheBang()
 
 " Function definition
