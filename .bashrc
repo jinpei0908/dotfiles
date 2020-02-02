@@ -7,7 +7,6 @@ set -o ignoreeof
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
 source /usr/local/etc/bash_completion.d/brew
-source /usr/local/etc/bash_completion.d/npm
 
 function pass_gen {
     cat /dev/urandom |
