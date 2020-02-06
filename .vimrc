@@ -33,21 +33,24 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
+
+" Delete setting
 set backspace=indent,eol,start
+
+" Cursor and line setting
 set cursorline
 set cursorlineopt=number
+set number
 
+" Search setting
 set ignorecase
 set smartcase
-set number " Show line number
-set title " Show title
-
-set wildmenu " Complement commands
-
-syntax on
 set incsearch
 set hlsearch
 
+" Other setting
+syntax on
+set wildmenu " Complement commands
 set shell=/usr/local/bin/bash
 
 " Key maps
@@ -55,14 +58,10 @@ inoremap {<Enter> {}<Left><CR><ESC>O
 nnoremap <C-c> :noh<CR>
 
 " Set autocmd
-autocmd BufEnter [Mm]akefile set noexpandtab
-autocmd BufEnter *.ya\\\{0,1\}ml set shiftwidth=2
-autocmd BufEnter *.json set shiftwidth=2
-autocmd BufNewFile *.bash call EnterSheBang()
-
-" Function definition
-function EnterSheBang()
-    read !echo -n \\#\\!/bin/bash
-    0d
-endfunction
+augroup my_setting
+    autocmd!
+    autocmd BufEnter [Mm]akefile set noexpandtab
+    autocmd BufEnter *.yaml,*.yml,*.json set shiftwidth=2
+    autocmd BufNewFile *.bash call setline(1, '#!/usr/local/bin/bash')
+augroup END
 
