@@ -22,3 +22,10 @@ function switch_hosts {
     sudo cp /private/etc/hosts."$hosts_kind" /private/etc/hosts
 }
 
+function _switch_hosts_completion {
+    local args=$(ls /private/etc/hosts.* | sed 's:/private/etc/hosts.::')
+    COMPREPLY=( $( compgen -W "$args" -- ${COMP_WORDS[COMP_CWORD]} ) )
+}
+
+complete -F _switch_hosts_completion switch_hosts
+
