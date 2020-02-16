@@ -29,3 +29,14 @@ function _switch_hosts_completion {
 
 complete -F _switch_hosts_completion switch_hosts
 
+function _make_completion {
+    local opts=$(grep -v "\t" Makefile |
+        grep -v ".PHONY" |
+        sed -e "s/:.*$//g" -e "/^$/d")
+    local cur
+    _get_comp_words_by_ref -n: cur
+    COMPREPLY=( $( compgen -W "$opts" -- "$cur" ) )
+}
+
+complete -F _make_completion make
+
