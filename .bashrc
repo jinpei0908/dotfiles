@@ -23,8 +23,10 @@ function switch_hosts {
 }
 
 function _switch_hosts_completion {
-    local args=$(ls /private/etc/hosts.* | sed 's:/private/etc/hosts.::')
-    COMPREPLY=( $( compgen -W "$args" -- ${COMP_WORDS[COMP_CWORD]} ) )
+    local opts=$(ls /private/etc/hosts.* | sed 's:/private/etc/hosts.::')
+    local cur
+    _get_comp_words_by_ref -n: cur
+    COMPREPLY=( $( compgen -W "$opts" -- "$cur" ) )
 }
 
 complete -F _switch_hosts_completion switch_hosts
