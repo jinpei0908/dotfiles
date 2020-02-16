@@ -16,3 +16,9 @@ function pass_gen {
         head -n 1
 }
 
+function switch_hosts {
+    hosts_kind="$1"
+    hosts_kind=${hosts_kind:? "is missing"}
+    sudo cp /private/etc/hosts."$hosts_kind" /private/etc/hosts
+}
+
