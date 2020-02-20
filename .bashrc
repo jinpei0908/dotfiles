@@ -17,9 +17,16 @@ function pass_gen {
 }
 
 function switch_hosts {
-    hosts_kind="$1"
-    hosts_kind=${hosts_kind:? "is missing"}
-    sudo cp /private/etc/hosts."$hosts_kind" /private/etc/hosts
+    local -r HOST_ROOT='/private/etc/hosts'
+    local -r hosts_suffix="$1"
+    if [[ "$hosts_suffix" == "" ]]; then
+        for hosts_file in $(ls "$HOST_ROOT".*); do
+            [[ $(diff "$hosts_file" "$HOST_ROOT") == '' ]] \
+                && sed "s:$HOST_ROOT.::" <(echo "$hosts_file") \
+                && return
+        done
+    fi
+    sudo cp "$HOST_ROOT"."$hosts_suffix" "$HOST_ROOT"
 }
 
 function _switch_hosts_completion {
