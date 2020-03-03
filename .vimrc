@@ -16,6 +16,7 @@ if dein#load_state('~/.cache/dein')
 
     call dein#add('tpope/vim-surround')
     call dein#add('vim-airline/vim-airline')
+    call dein#add('godlygeek/tabular')
 
     call dein#end()
     call dein#save_state()
