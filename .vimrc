@@ -58,6 +58,9 @@ set shell=/usr/local/bin/bash
 inoremap {<Enter> {}<Left><CR><ESC>O
 nnoremap <C-c> :noh<CR>
 
+" Abbreviation
+cabbrev vr vertical resize
+
 " Set autocmd
 augroup my_setting
     autocmd!
