@@ -53,6 +53,7 @@ set hlsearch
 syntax on
 set wildmenu " Complement commands
 set shell=/usr/local/bin/bash
+set dictionary=/usr/share/dict/words
 
 " Key maps
 inoremap {<Enter> {}<Left><CR><ESC>O
