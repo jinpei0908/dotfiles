@@ -18,6 +18,14 @@ if dein#load_state('~/.cache/dein')
     call dein#add('vim-airline/vim-airline')
     call dein#add('godlygeek/tabular')
 
+    " Language server
+    call dein#add('prabirshrestha/vim-lsp')
+    call dein#add('mattn/vim-lsp-settings')
+
+    " Auto complete
+    call dein#add('prabirshrestha/asyncomplete.vim')
+    call dein#add('prabirshrestha/asyncomplete-lsp.vim')
+
     call dein#end()
     call dein#save_state()
 endif
