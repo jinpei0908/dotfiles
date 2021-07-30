@@ -5,8 +5,8 @@ alias julia='/Applications/Julia-1.1.app/Contents/Resources/julia/bin/julia'
 set -o vi
 set -o ignoreeof
 
-source /usr/local/etc/bash_completion.d/git-completion.bash
-source /usr/local/etc/bash_completion.d/brew
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+source /opt/homebrew/etc/bash_completion.d/brew
 
 function total_orico {
     grep '本人' |
