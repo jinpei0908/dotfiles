@@ -7,6 +7,8 @@ set -o ignoreeof
 
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 source /opt/homebrew/etc/bash_completion.d/brew
+[[ -e /usr/local/etc/bash_completion.d/docker.bash-completion ]] \
+    && source /usr/local/etc/bash_completion.d/docker.bash-completion
 
 function total_orico {
     grep '本人' |
