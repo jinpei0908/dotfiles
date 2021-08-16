@@ -6,10 +6,12 @@ set -o vi
 set -o ignoreeof
 
 # completion files
+# git
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-source /opt/homebrew/etc/bash_completion.d/brew
-[[ -e /usr/local/etc/bash_completion.d/docker.bash-completion ]] \
-    && source /usr/local/etc/bash_completion.d/docker.bash-completion
+# bash_completion.d
+for completion_file in $(ls /opt/homebrew/etc/bash_completion.d/*); do
+    source "$completion_file"
+done
 
 # my functions
 function total_orico {
