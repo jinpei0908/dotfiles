@@ -9,7 +9,7 @@ set -o ignoreeof
 # git
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 # bash_completion.d
-for completion_file in $(ls /opt/homebrew/etc/bash_completion.d/*); do
+for completion_file in $(ls $(brew --prefix)/etc/bash_completion.d/*); do
     source "$completion_file"
 done
 
