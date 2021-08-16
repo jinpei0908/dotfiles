@@ -25,6 +25,8 @@ if dein#load_state('~/.cache/dein')
     " Auto complete
     call dein#add('prabirshrestha/asyncomplete.vim')
     call dein#add('prabirshrestha/asyncomplete-lsp.vim')
+    call dein#add('Shougo/ddc.vim')
+    call dein#add('vim-denops/denops.vim')
 
     call dein#end()
     call dein#save_state()
@@ -79,3 +81,6 @@ augroup my_setting
     autocmd BufWritePre * LspDocumentFormatSync
 augroup END
 
+" ddc
+call ddc#custom#patch_global('sources', ['around', 'vim-lsp'])
+call ddc#enable()
