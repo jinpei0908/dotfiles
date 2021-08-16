@@ -6,12 +6,7 @@ set -o vi
 set -o ignoreeof
 
 # completion files
-# git
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-# bash_completion.d
-for completion_file in $(ls $(brew --prefix)/etc/bash_completion.d/*); do
-    source "$completion_file"
-done
 
 # my functions
 function total_orico {
