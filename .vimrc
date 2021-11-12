@@ -28,6 +28,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/ddc.vim')
     call dein#add('vim-denops/denops.vim')
 
+    call dein#add('jinpei0908/totsuzen-no-shi')
+
     call dein#end()
     call dein#save_state()
 endif
