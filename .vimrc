@@ -82,5 +82,6 @@ augroup my_setting
 augroup END
 
 " ddc
-call ddc#custom#patch_global('sources', ['around', 'vim-lsp'])
+call ddc#custom#patch_global('sources', 'around')
+call ddc#custom#patch_global('sources', 'vim-lsp')
 call ddc#enable()
