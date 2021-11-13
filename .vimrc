@@ -79,7 +79,7 @@ augroup my_setting
     autocmd!
     autocmd BufEnter [Mm]akefile set noexpandtab
     autocmd BufEnter *.yaml,*.yml,*.json set shiftwidth=2
-    autocmd BufNewFile *.bash call setline(1, '#!/usr/local/bin/bash')
+    autocmd BufNewFile *.bash call setline(1, '#!/bin/bash')
     autocmd BufWritePre * LspDocumentFormatSync
 augroup END
 
