@@ -14,7 +14,7 @@ if !has('nvim')
 endif
 
 call dein#add('tpope/vim-surround')
-call dein#add('vim-airline/vim-airline')
+call dein#add('itchyny/lightline.vim')
 
 call dein#add('godlygeek/tabular')
 
@@ -82,6 +82,12 @@ augroup my_setting
     autocmd BufNewFile *.bash call setline(1, '#!/bin/bash')
     autocmd BufWritePre * LspDocumentFormatSync
 augroup END
+
+" lightline.vim
+set laststatus=2
+let g:lightline = {
+            \ 'colorscheme': 'wombat',
+      \ }
 
 " ddc
 call ddc#custom#patch_global('sources', 'around')
