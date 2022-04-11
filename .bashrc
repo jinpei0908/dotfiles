@@ -5,6 +5,9 @@ alias ls='ls -G'
 set -o vi
 set -o ignoreeof
 
+# Ctrl-sでincremental searchをできるようにする
+stty stop undef
+
 # completion files
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 
