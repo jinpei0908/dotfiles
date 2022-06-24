@@ -7,7 +7,6 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 call dein#begin('~/.cache/dein')
 
 call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-call dein#add('Shougo/deoplete.nvim')
 if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
@@ -15,7 +14,6 @@ endif
 
 call dein#add('tpope/vim-surround')
 call dein#add('itchyny/lightline.vim')
-
 call dein#add('godlygeek/tabular')
 
 " Language server
@@ -31,7 +29,6 @@ call dein#add('vim-skk/skkeleton')
 call dein#add('jinpei0908/totsuzen-no-shi')
 
 call dein#end()
-call dein#save_state()
 
 filetype plugin indent on
 syntax enable
@@ -62,7 +59,7 @@ set hlsearch
 
 " Other setting
 syntax on
-set wildmenu " Complement commands
+set wildmode=longest,list
 set shell=/opt/homebrew/bin/bash
 set dictionary=/usr/share/dict/words
 
