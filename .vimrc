@@ -23,9 +23,8 @@ call dein#add('prabirshrestha/vim-lsp')
 call dein#add('mattn/vim-lsp-settings')
 
 " Auto complete
-call dein#add('prabirshrestha/asyncomplete.vim')
-call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 call dein#add('Shougo/ddc.vim')
+call dein#add('shun/ddc-vim-lsp')
 call dein#add('vim-denops/denops.vim')
 call dein#add('vim-skk/skkeleton')
 
@@ -64,7 +63,7 @@ set hlsearch
 " Other setting
 syntax on
 set wildmenu " Complement commands
-set shell=/usr/local/bin/bash
+set shell=/opt/homebrew/bin/bash
 set dictionary=/usr/share/dict/words
 
 " Key maps
