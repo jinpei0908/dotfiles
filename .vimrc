@@ -14,7 +14,6 @@ endif
 
 call dein#add('tpope/vim-surround')
 call dein#add('itchyny/lightline.vim')
-call dein#add('godlygeek/tabular')
 
 " Language server
 call dein#add('prabirshrestha/vim-lsp')
