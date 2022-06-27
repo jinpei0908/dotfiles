@@ -15,15 +15,18 @@ endif
 call dein#add('tpope/vim-surround')
 call dein#add('itchyny/lightline.vim')
 
-" Language server
+" LSP
 call dein#add('prabirshrestha/vim-lsp')
 call dein#add('mattn/vim-lsp-settings')
 
-" Auto complete
+" ddc
 call dein#add('Shougo/ddc.vim')
 call dein#add('shun/ddc-vim-lsp')
 call dein#add('vim-denops/denops.vim')
 call dein#add('vim-skk/skkeleton')
+call dein#add('Shougo/ddc-around')
+call dein#add('Shougo/ddc-sorter_rank')
+call dein#add('matsui54/ddc-matcher_fuzzy')
 
 call dein#add('jinpei0908/totsuzen-no-shi')
 
@@ -56,6 +59,10 @@ set smartcase
 set incsearch
 set hlsearch
 
+" ウインドウ分割
+set splitbelow
+set splitright
+
 " Other setting
 syntax on
 set wildmode=longest,list
@@ -80,11 +87,20 @@ augroup END
 
 " lightline.vim
 set laststatus=2
-let g:lightline = {
-            \ 'colorscheme': 'wombat',
-      \ }
+let g:lightline = {'colorscheme': 'wombat'}
 
 " ddc
-call ddc#custom#patch_global('sources', 'around')
-call ddc#custom#patch_global('sources', 'vim-lsp')
+call ddc#custom#patch_global('sources', [
+            \   'vim-lsp',
+            \   'around'
+            \ ])
+call ddc#custom#patch_global('sourceOptions', {
+            \ '_': {
+            \   'matchers': ['matcher_fuzzy'],
+            \   'sorters': ['sorter_rank']
+            \ },
+            \ 'around': {'mark': 'around'},
+            \ 'vim-lsp': {
+            \   'mark': 'lsp'
+            \ }})
 call ddc#enable()
