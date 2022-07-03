@@ -27,6 +27,7 @@ call dein#add('vim-skk/skkeleton')
 call dein#add('Shougo/ddc-around')
 call dein#add('Shougo/ddc-sorter_rank')
 call dein#add('matsui54/ddc-matcher_fuzzy')
+call dein#add('LumaKernel/ddc-file')
 
 call dein#add('jinpei0908/totsuzen-no-shi')
 
@@ -92,6 +93,7 @@ let g:lightline = {'colorscheme': 'wombat'}
 " ddc
 call ddc#custom#patch_global('sources', [
             \   'vim-lsp',
+            \   'file',
             \   'around'
             \ ])
 call ddc#custom#patch_global('sourceOptions', {
@@ -102,5 +104,13 @@ call ddc#custom#patch_global('sourceOptions', {
             \ 'around': {'mark': 'around'},
             \ 'vim-lsp': {
             \   'mark': 'lsp'
+            \ },
+            \ 'file': {
+            \   'mark': 'file',
+            \   'isVolatile': v:true,
+            \   'forceCompletionPattern': '\S/\S*',
             \ }})
 call ddc#enable()
+
+" lsp
+let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server', 'deno']
